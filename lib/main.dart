@@ -221,9 +221,12 @@ class KeyPad extends StatelessWidget {
       childAspectRatio: 2 / 1,
       //改變GridView尺寸
       children: List.generate(9, (index) {
-        return FlatButton(
-          shape: RoundedRectangleBorder(), //取消按鍵的圓角邊
-          color: Colors.primaries[index][200],
+        return TextButton(
+          style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(), //取消按鍵的圓角邊
+            backgroundColor: Colors.primaries[index][200],
+            primary: Colors.black,
+          ),
           child: Text("${index + 1}", style: TextStyle(fontSize: 24)),
           onPressed: () {
             _inputController.add(index + 1);
